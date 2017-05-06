@@ -7,6 +7,7 @@ const defaultConfig = {
   offset: 0,
   scrollDuration: 400,
   keepLastAnchorHash: false,
+  scrollOnHashChange: false,
 }
 
 class Manager {
@@ -75,7 +76,7 @@ class Manager {
     if (this.forcedHash) {
       this.forcedHash = false
     } else {
-      this.goToSection(getHash())
+      this.config.scrollOnHashChange && this.goToSection(getHash())
     }
   }
 
